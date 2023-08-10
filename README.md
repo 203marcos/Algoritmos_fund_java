@@ -1,1 +1,1 @@
-# algoritmos fudnamentais
+# algoritmos fundamentais

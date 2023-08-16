@@ -8,10 +8,12 @@ public class Principal {
         int a = prompt.nextInt();
         System.out.println("Digite o valor de b");
         int b = prompt.nextInt();
-        algFund1.trocaVariavel(a,b);
-        algFund1.contagemVariavel(a,b);
-
-
+        //algFund1.trocaVariavel(a,b);
+        //algFund1.contagemVariavel(a,b);
+        //algFund1.somaVariavel();
+        //algFund1.fatorialVariavel();
+        //algFund1.serieInfinita();
+        algFund1.fibonaciVariavel();
 
 
 
@@ -26,3 +28,4 @@ public class Principal {
 
 
 }
+

@@ -83,7 +83,7 @@ public class AlgFundamentais {
         int i = 1;
         int sinal = 1;
 
-        for(int j=0;j<=n;j++){
+        for(int j=0;j<n;j++){
         
             termo = (int) (sinal * Math.pow(x,i) / fatorialAux(i));
             s = s + sinal * termo;

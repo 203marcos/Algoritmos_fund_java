@@ -80,14 +80,15 @@ public class AlgFundamentais {
 
         int termo;
         int s = 0;
-        int i = -1;
-        int sinal = -1;
+        int i = 1;
+        int sinal = 1;
 
         for(int j=0;j<=n;j++){
+        
+            termo = (int) (sinal * Math.pow(x,i) / fatorialAux(i));
+            s = s + sinal * termo;
             i = i + 2;
             sinal = -sinal;
-            termo = (int) (sinal * Math.pow(x,i) / fatorialAux(i));
-            s = s + termo;
         }
 
         System.out.println("o numero é esse: "+ s);

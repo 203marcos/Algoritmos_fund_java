@@ -85,7 +85,7 @@ public class AlgFundamentais {
 
         for(int j=0;j<n;j++){
         
-            termo = (int) (sinal * Math.pow(x,i) / fatorialAux(i));
+            termo = (int) (Math.pow(x,i) / fatorialAux(i));
             s = s + sinal * termo;
             i = i + 2;
             sinal = -sinal;

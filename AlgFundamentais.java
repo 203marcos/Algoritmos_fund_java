@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class AlgFundamentais {
+    Scanner prompt = new Scanner(System.in);
+
     public void trocaVariavel(int a, int b) {
         //faz a troca de variavel entre a e b
         int aux;
@@ -13,62 +15,52 @@ public class AlgFundamentais {
     }
 
     public void contagemVariavel(int a, int b) {
-        //faz contagem de a até b
-        int i = 0;
-        while (a < b) {
-            i = i + 1;
-            a++;
-        }
+        System.out.println("Contagem de a até b equivale: " + contagemVariavelAux(a,b));
 
-        System.out.println("Contagem de a até b equivale: " + i);
     }
+    public static int contagemVariavelAux(int a, int b){
+        if(b == a)
+            return 0;
+        else
+            return 1 + contagemVariavelAux(a, b-1);
+
+    }
+
 
     public void somaVariavel() {
-        //Dado um conjunto de n números, calcular a soma
-        //desses números. Assumir que n é maior ou igual a
-        //zero.
-        Scanner prompt = new Scanner(System.in);
-        System.out.println("Digite o valor de n");
-        short n = prompt.nextShort();
+        System.out.println("Digite quantos elementos tem: ");
+        int n = prompt.nextInt();
+        int[] array = new int[n];
 
-        short i = 0;
-        short soma =0;
-        short aux;
-        Scanner numero = new Scanner(System.in);
-
-        while(i < n){
-            i++;
-            System.out.println("Digite o valor do numero");
-            aux = prompt.nextShort();
-            soma+=aux;
+        for (int i = 0; i < n; i++) {
+            System.out.print("Digite o elemento " + (i + 1) + ": ");
+            array[i] = prompt.nextInt();
         }
 
-        System.out.println("A soma dos numeros são: " + soma);
+        System.out.println("A soma dos numeros são: " + somaVariavelAux(n-1,array));
+    }
+    public static int somaVariavelAux(int n, int[] array){
+        if(n == 0 )
+            return array[0];
+        else
+            return array[n] + somaVariavelAux(n-1,array);
 
     }
 
+
     public void fatorialVariavel() {
-        Scanner prompt = new Scanner(System.in);
-        System.out.println("Digite o valor de n");
+        System.out.println("Digite o valor de n para fatorar");
         int n = prompt.nextInt();
-        int aux = 1;
 
-        for(int i=1;i<=n;i++){
-            aux = i * aux;
-
-        }
-
-        System.out.println("O fatorial é: "+aux);
+        System.out.println("O fatorial é: "+fatorialAux(n));
 
     }
     public int fatorialAux(int i) {
-        int aux = 1;
+       if(i == 1 || i == 0)
+           return 1;
+       else
+           return i * fatorialAux(i-1);
 
-        for(int j=1;j<=i;j++) {
-            aux = j * aux;
-
-        }
-        return aux;
     }
 
     public void serieInfinita() {
@@ -97,32 +89,27 @@ public class AlgFundamentais {
 
     }
     public void fibonaciVariavel() {
-        Scanner prompt = new Scanner(System.in);
-        System.out.println("Digite o numero de termos (n): ");
-        int n = prompt.nextInt();
 
-        int a = 0;
-        int b = 1;
-        int i = 2;
-        int c;
+        int num;
 
-        if (n == 1) {
-            System.out.println(a);
-        } else {
-            System.out.print(a + ", " + b);
-        }
+        System.out.print("Informe o número de termos da sequência: ");
+        num = prompt.nextInt();
 
-        while (i < n) {
-            i = i + 1;
-            c = a + b;
-            System.out.print(", " + c);
-            a = b;
-            b = c;
-        }
-
-
+        for (int i = 1; i <= num; i++)
+            System.out.print(fib(i) + " ");
 
     }
+
+    public static int fib(int n) {
+        if (n == 1)
+            return 0;
+        else if (n == 2)
+            return 1;
+        else
+            return fib(n-2) + fib(n-1);
+
+    }
+
 
 
 }

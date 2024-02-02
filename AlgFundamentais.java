@@ -18,6 +18,7 @@ public class AlgFundamentais {
         System.out.println("Contagem de a até b equivale: " + contagemVariavelAux(a,b));
 
     }
+    
     public static int contagemVariavelAux(int a, int b){
         if(b == a)
             return 0;
@@ -39,6 +40,7 @@ public class AlgFundamentais {
 
         System.out.println("A soma dos numeros são: " + somaVariavelAux(n-1,array));
     }
+    
     public static int somaVariavelAux(int n, int[] array){
         if(n == 0 )
             return array[0];
@@ -55,6 +57,7 @@ public class AlgFundamentais {
         System.out.println("O fatorial é: "+fatorialAux(n));
 
     }
+    
     public int fatorialAux(int i) {
        if(i == 1 || i == 0)
            return 1;
@@ -88,6 +91,7 @@ public class AlgFundamentais {
 
 
     }
+    
     public void fibonaciVariavel() {
 
         int num;
